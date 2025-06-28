@@ -5,7 +5,6 @@ import { MapViewer } from "@/components/MapViewer";
 import { loadMapSet } from "@/map-sets";
 import { MapSet } from "@/map-sets/types";
 import { faChevronLeft, faChevronRight, faCircleInfo, faDice, faExpand } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 
 interface MapSetOption {
