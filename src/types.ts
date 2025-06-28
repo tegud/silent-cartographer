@@ -16,20 +16,10 @@ export interface Map {
   number: number | number[]
   name: string;
   image: string;
+  type: "light" | "medium" | "heavy" | "?";
 }
 
 export interface MapSetOption {
   id: string
   name: string
 }
-
-export interface OrientationProps {
-  mapSets: MapSetOption[],
-  setMapSet: (id: string) => void,
-  setMapDeployment: (id: string) => void,
-  selectedDeployment: MapSet['deployments'][number] | undefined,
-  selectedMapIndex: number,
-  selectionAction: (type: 'next' | 'prev' | 'random') => void,
-  selectedMapSet: MapSet,
-  selectedMap: Map | undefined,
-};

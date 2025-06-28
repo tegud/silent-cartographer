@@ -3,7 +3,18 @@ import { Button } from "./Button";
 import { MapKey } from "./MapKey";
 import { MapSelector } from "./MapSelector";
 import { MapViewer } from "./MapViewer";
-import { OrientationProps } from "@/types";
+import { Map, MapSet, MapSetOption } from "@/types";
+
+interface OrientationProps {
+  mapSets: MapSetOption[],
+  setMapSet: (id: string) => void,
+  setMapDeployment: (id: string) => void,
+  selectedDeployment: MapSet['deployments'][number] | undefined,
+  selectedMapIndex: number,
+  selectionAction: (type: 'next' | 'prev' | 'random') => void,
+  selectedMapSet: MapSet,
+  selectedMap: Map | undefined,
+};
 
 export const Portrait = ({
   mapSets,
@@ -40,7 +51,7 @@ export const Portrait = ({
         <div className="flex gap-3">
           <label className="flex-1 flex text-lg gap-3">
             <input type="radio" name="filter" className="scale-150" />
-            <span>None</span>
+            <span>All</span>
           </label>
           <label className="flex-1 flex text-lg gap-3">
             <input type="radio" name="filter" className="scale-150" />
