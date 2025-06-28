@@ -1,10 +1,11 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import { MapKey } from "@/components/MapKey";
 import { MapViewer } from "@/components/MapViewer";
 import { loadMapSet } from "@/map-sets";
 import { MapSet } from "@/map-sets/types";
-import { faChevronLeft, faChevronRight, faCircleInfo, faDice, faExpand } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faCircleInfo, faDice } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 
 interface MapSetOption {
@@ -105,8 +106,8 @@ export default function Home() {
         </div>
         <div className="my-3 flex gap-3 items-stretch">
           <Button icon={faCircleInfo} label="Key" />
-          <Button icon={faExpand} label="Full Screen" />
         </div>
+        <MapKey />
       </div>}
     </div>
   );
