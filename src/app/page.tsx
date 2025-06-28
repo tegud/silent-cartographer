@@ -1,8 +1,10 @@
 "use client";
 
+import { Button } from "@/components/Button";
+import { MapViewer } from "@/components/MapViewer";
 import { loadMapSet } from "@/map-sets";
 import { MapSet } from "@/map-sets/types";
-import { faChevronLeft, faChevronRight, faDice } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faCircleInfo, faDice, faExpand } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 
@@ -91,18 +93,21 @@ export default function Home() {
         </div>
       </div>
       {selectedMap && selectedDeployment && <div className="py-6">
-        <div className="mb-6 flex gap-3 text-2xl items-center">
-          <div><FontAwesomeIcon icon={faChevronLeft} /></div>
+        <div className="mb-3 flex gap-3 text-2xl items-center">
+          <Button icon={faChevronLeft} />
           <div className="flex-1 text-center text-xl font-bold">
             {selectedMap.name}
           </div>
-          <div><FontAwesomeIcon icon={faChevronRight} /></div>
-          <div className="flex items-center gap-2">
-            <div><FontAwesomeIcon icon={faDice} /></div>
-            <div className="text-lg">Random</div>
-          </div>
+          <Button icon={faChevronRight} />
+          <Button icon={faDice} />
         </div>
-        <img src={`/${selectedMapSet.imageDirectory}/${selectedMap.image}`} />
+        <div className="mb-3">
+          <MapViewer selectedMapSet={selectedMapSet} selectedMap={selectedMap} />
+        </div>
+        <div className="my-3 flex gap-3 items-stretch">
+          <Button icon={faCircleInfo} label="Key" />
+          <Button icon={faExpand} label="Full Screen" />
+        </div>
       </div>}
     </div>
   );
