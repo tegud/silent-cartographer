@@ -1,9 +1,10 @@
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faFistRaised, faGun, faQuestionCircle, faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "./Button";
 import { MapKey } from "./MapKey";
 import { MapSelector } from "./MapSelector";
 import { MapViewer } from "./MapViewer";
 import { Map, MapSet, MapSetOption } from "@/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface OrientationProps {
   mapSets: MapSetOption[],
@@ -26,6 +27,18 @@ export const Portrait = ({
   selectedMapIndex,
   selectionAction,
 }: OrientationProps) => {
+  function getIconFromType(type: string): import("@fortawesome/fontawesome-svg-core").IconProp {
+    switch (type.toLowerCase()) {
+      case "light":
+        return faGun;
+      case "medium":
+        return faScaleBalanced;
+      case "heavy":
+        return faFistRaised;
+      default:
+        return faQuestionCircle;
+    }
+  }
   return (
     <div className="max-w-4xl mx-auto p-3">
       <div className="flex gap-6">
@@ -76,8 +89,12 @@ export const Portrait = ({
         <div className="mb-3">
           <MapViewer selectedMapSet={selectedMapSet} selectedMap={selectedMap} />
         </div>
-        <div className="my-3 flex gap-3 items-stretch">
+        <div className="my-3 flex gap-3 items-center">
           <Button icon={faCircleInfo} label="Key" />
+          <div className="font-bold text-xl ml-auto flex gap-2">
+            <div><FontAwesomeIcon icon={getIconFromType(selectedMap.type)} /></div>
+            <div>{`${selectedMap.type[0].toUpperCase()}${selectedMap.type.slice(1)}`}</div>
+          </div>
         </div>
         <MapKey />
       </div>}

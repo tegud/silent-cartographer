@@ -19,19 +19,25 @@ export default function Home() {
   const [selectedMapSet, setSelectedMapSet] = useState<MapSet | undefined>();
   const [mapDeployment, setMapDeployment] = useState<string | undefined>();
   const [map, setMap] = useState<string | undefined>();
+  const [typeFilter, setTypeFilter] = useState<string | undefined>();
 
   const selectedDeployment = selectedMapSet
     ? selectedMapSet.deployments.find(({ id }) => id === mapDeployment)
     : undefined;
   
-  const selectedMap = selectedDeployment && map
-    ? selectedDeployment.maps.find(({ id }) => id === map)
-    : selectedDeployment
-      ? selectedDeployment.maps[0]
+  const filteredMaps = selectedDeployment && selectedDeployment.maps.filter((map) => {
+    if (!typeFilter) return true;
+    return map.type.toLowerCase() === typeFilter.toLowerCase();
+  });
+  
+  const selectedMap = filteredMaps && map
+    ? filteredMaps.find(({ id }) => id === map)
+    : filteredMaps
+      ? filteredMaps[0]
       : undefined;
   
-  const selectedMapIndex = selectedDeployment && selectedMap
-    ? selectedDeployment.maps.findIndex(({ id }) => id === selectedMap.id) : 0;
+  const selectedMapIndex = filteredMaps && selectedMap
+    ? filteredMaps.findIndex(({ id }) => id === selectedMap.id) : 0;
     
   const getMapSetInfo = async (mapSetId: string) => {
     const mapSet = await loadMapSet(mapSetId);
