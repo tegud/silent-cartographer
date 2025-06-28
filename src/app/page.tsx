@@ -19,7 +19,7 @@ export default function Home() {
   const [mapSet, setMapSet] = useState<string>(MAP_SETS[0].id);
   const [selectedMapSet, setSelectedMapSet] = useState<MapSet | undefined>();
   const [mapDeployment, setMapDeployment] = useState<string | undefined>();
-  const [map, setSelectedMap] = useState<string | undefined>();
+  const [map] = useState<string | undefined>();
 
   const selectedDeployment = selectedMapSet
     ? selectedMapSet.deployments.find(({ id }) => id === mapDeployment)
