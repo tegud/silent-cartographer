@@ -1,0 +1,75 @@
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "./Button";
+import { MapKey } from "./MapKey";
+import { MapSelector } from "./MapSelector";
+import { MapViewer } from "./MapViewer";
+import { OrientationProps } from "@/types";
+
+export const Portrait = ({
+  mapSets,
+  setMapSet,
+  setMapDeployment,
+  selectedMapSet,
+  selectedMap,
+  selectedDeployment,
+  selectedMapIndex,
+  selectionAction,
+}: OrientationProps) => {
+  return (
+    <div className="max-w-4xl mx-auto p-3">
+      <div className="flex gap-6">
+        <label className="flex-1 flex flex-col gap-3">
+          <div className="font-bold">Map Set</div>
+          <select className="bg-white text-lg p-2 text-black w-full" onChange={(e) => setMapSet(e.target.value)}>
+            {mapSets.map((mapSet) => {
+              return <option key={`mapset-option__${mapSet.id}`} value={mapSet.id}>{mapSet.name}</option>
+            })}
+          </select>
+        </label>
+        <label className="flex-1 flex flex-col gap-3">
+          <div className="font-bold">Deployment</div>
+          <select className="bg-white text-lg p-2 text-black w-full" onChange={(e) => setMapDeployment(e.target.value)}>
+            {selectedMapSet.deployments.map((deployment) => {
+              return <option key={`deployment-option__${deployment.id}`} value={deployment.id}>{deployment.name}</option>
+            })}
+          </select>
+        </label>
+      </div>
+      <div>
+        <div className="font-bold pt-6 pb-3">Filter by:</div>
+        <div className="flex gap-3">
+          <label className="flex-1 flex text-lg gap-3">
+            <input type="radio" name="filter" className="scale-150" />
+            <span>None</span>
+          </label>
+          <label className="flex-1 flex text-lg gap-3">
+            <input type="radio" name="filter" className="scale-150" />
+            <span>Light</span>
+          </label>
+          <label className="flex-1 flex text-lg gap-3">
+            <input type="radio" name="filter" className="scale-150" />
+            <span>Medium</span>
+          </label>
+          <label className="flex-1 flex text-lg gap-3">
+            <input type="radio" name="filter" className="scale-150" />
+            <span>Heavy</span>
+          </label>
+        </div>
+      </div>
+      {selectedMap && selectedDeployment && <div className="py-6">
+        <MapSelector
+          mapName={selectedMap.name}
+          totalMaps={selectedDeployment.maps.length}
+          currentIndex={selectedMapIndex}
+          action={selectionAction} />
+        <div className="mb-3">
+          <MapViewer selectedMapSet={selectedMapSet} selectedMap={selectedMap} />
+        </div>
+        <div className="my-3 flex gap-3 items-stretch">
+          <Button icon={faCircleInfo} label="Key" />
+        </div>
+        <MapKey />
+      </div>}
+    </div>
+  );
+};

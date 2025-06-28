@@ -1,4 +1,4 @@
-import { MapSet } from "./types";
+import { MapSet } from "../types";
 
 export const loadMapSet = async (mapSetId: string): Promise<MapSet> => {
   const res = await fetch(`/data/${mapSetId}.json`);
