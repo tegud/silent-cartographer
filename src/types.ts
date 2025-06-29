@@ -17,6 +17,7 @@ export interface Map {
   name: string;
   image: string;
   type: "light" | "medium" | "heavy" | "?";
+  features: string[];
 }
 
 export interface MapSetOption {

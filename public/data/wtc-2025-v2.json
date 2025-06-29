@@ -10,49 +10,56 @@
           "name": "Crucible of battle - 1",
           "type": "heavy",
           "number": 1,
-          "image": "/crucible-of-battle-1.jpg"
+          "image": "/crucible-of-battle-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight cargo"]
         },
         {
           "id": "crucible-of-battle-2",
           "name": "Crucible of battle - 2",
           "type": "heavy",
           "number": 2,
-          "image": "/crucible-of-battle-2.jpg"
+          "image": "/crucible-of-battle-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "no los", "knight gap"]
         },
         {
           "id": "crucible-of-battle-3",
           "name": "Crucible of battle - 3",
           "type": "medium",
           "number": 3,
-          "image": "/crucible-of-battle-3.jpg"
+          "image": "/crucible-of-battle-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight cargo", "knight gap"]
         },
         {
           "id": "crucible-of-battle-4",
           "name": "Crucible of battle - 4 - 5",
           "type": "medium",
           "number": [4, 5],
-          "image": "/crucible-of-battle-4.jpg"
+          "image": "/crucible-of-battle-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "no los", "knight gap"]
         },
         {
           "id": "crucible-of-battle-6",
           "name": "Crucible of battle - 6",
           "type": "medium",
           "number": 6,
-          "image": "/crucible-of-battle-6.jpg"
+          "image": "/crucible-of-battle-6.jpg",
+          "features": ["large ruin", "small ruin", "knight gap", "cargo container"]
         },
         {
           "id": "crucible-of-battle-7",
           "name": "Crucible of battle - 7",
           "type": "light",
           "number": 7,
-          "image": "/crucible-of-battle-7.jpg"
+          "image": "/crucible-of-battle-7.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight cargo"]
         },
         {
           "id": "crucible-of-battle-8",
           "name": "Crucible of battle - 8",
           "type": "light",
           "number": 8,
-          "image": "/crucible-of-battle-8.jpg"
+          "image": "/crucible-of-battle-8.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         }
       ]
     },
@@ -65,42 +72,48 @@
           "name": "Dawn of war - 1",
           "type": "medium",
           "number": 1,
-          "image": "/dawn-of-war-1.jpg"
+          "image": "/dawn-of-war-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "dawn-of-war-2",
           "name": "Dawn of war - 2",
           "type": "heavy",
           "number": 2,
-          "image": "/dawn-of-war-2.jpg"
+          "image": "/dawn-of-war-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "dawn-of-war-3",
           "name": "Dawn of war - 3",
           "type": "light",
           "number": 3,
-          "image": "/dawn-of-war-3.jpg"
+          "image": "/dawn-of-war-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "dawn-of-war-4",
           "name": "Dawn of war - 4",
           "type": "medium",
           "number": 4,
-          "image": "/dawn-of-war-4.jpg"
+          "image": "/dawn-of-war-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         },
         {
           "id": "dawn-of-war-5",
           "name": "Dawn of war - 5",
           "type": "heavy",
           "number": 5,
-          "image": "/dawn-of-war-5.jpg"
+          "image": "/dawn-of-war-5.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         },
         {
           "id": "dawn-of-war-6",
           "name": "Dawn of war - 6",
           "type": "light",
           "number": 6,
-          "image": "/dawn-of-war-6.jpg"
+          "image": "/dawn-of-war-6.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         }
       ]
     },
@@ -113,49 +126,56 @@
           "name": "Hammer and anvil - 1",
           "type": "heavy",
           "number": 1,
-          "image": "/hammer-and-anvil-1.jpg"
+          "image": "/hammer-and-anvil-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "hammer-and-anvil-2",
           "name": "Hammer and anvil - 2",
           "type": "heavy",
           "number": 2,
-          "image": "/hammer-and-anvil-2.jpg"
+          "image": "/hammer-and-anvil-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap", "no los"]
         },
         {
           "id": "hammer-and-anvil-3",
           "name": "Hammer and anvil - 3",
           "type": "medium",
           "number": 3,
-          "image": "/hammer-and-anvil-3.jpg"
+          "image": "/hammer-and-anvil-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "hammer-and-anvil-4",
           "name": "Hammer and anvil - 4 - 5",
           "type": "medium",
           "number": [4, 5],
-          "image": "/hammer-and-anvil-4.jpg"
+          "image": "/hammer-and-anvil-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "hammer-and-anvil-6",
           "name": "Hammer and anvil - 6",
           "type": "medium",
           "number": 6,
-          "image": "/hammer-and-anvil-6.jpg"
+          "image": "/hammer-and-anvil-6.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "hammer-and-anvil-7",
           "name": "Hammer and anvil - 7",
           "type": "light",
           "number": 7,
-          "image": "/hammer-and-anvil-7.jpg"
+          "image": "/hammer-and-anvil-7.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "hammer-and-anvil-8",
           "name": "Hammer and anvil - 8",
           "type": "light",
           "number": 8,
-          "image": "/hammer-and-anvil-8.jpg"
+          "image": "/hammer-and-anvil-8.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         }
       ]
     },
@@ -168,49 +188,56 @@
           "name": "Search & Destroy - 1",
           "type": "heavy",
           "number": 1,
-          "image": "/search-and-destroy-1.jpg"
+          "image": "/search-and-destroy-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap", "no los"]
         },
         {
           "id": "search-and-destroy-2",
           "name": "Search & Destroy - 2",
           "type": "heavy",
           "number": 2,
-          "image": "/search-and-destroy-2.jpg"
+          "image": "/search-and-destroy-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "search-and-destroy-3",
           "name": "Search & Destroy - 3",
           "type": "medium",
           "number": 3,
-          "image": "/search-and-destroy-3.jpg"
+          "image": "/search-and-destroy-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap", "no los"]
         },
         {
           "id": "search-and-destroy-4",
           "name": "Search & Destroy - 4 - 5",
           "type": "medium",
           "number": [4, 5],
-          "image": "/search-and-destroy-4.jpg"
+          "image": "/search-and-destroy-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight cargo"]
         },
         {
           "id": "search-and-destroy-6",
           "name": "Search & Destroy - 6",
           "type": "medium",
           "number": 6,
-          "image": "/search-and-destroy-6.jpg"
+          "image": "/search-and-destroy-6.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "search-and-destroy-7",
           "name": "Search & Destroy - 7",
           "type": "light",
           "number": 7,
-          "image": "/search-and-destroy-7.jpg"
+          "image": "/search-and-destroy-7.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap", "no los"]
         },
         {
           "id": "search-and-destroy-8",
           "name": "Search & Destroy - 8",
           "type": "light",
           "number": 8,
-          "image": "/search-and-destroy-8.jpg"
+          "image": "/search-and-destroy-8.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         }
       ]
     },
@@ -223,42 +250,48 @@
           "name": "Sweeping engagement - 1",
           "type" : "medium",
           "number": 1,
-          "image": "/sweeping-engagement-1.jpg"
+          "image": "/sweeping-engagement-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "sweeping-engagement-2",
           "name": "Sweeping engagement - 2",
           "type" : "heavy",
           "number": 2,
-          "image": "/sweeping-engagement-2.jpg"
+          "image": "/sweeping-engagement-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "sweeping-engagement-3",
           "name": "Sweeping engagement - 3",
           "type" : "light",
           "number": 3,
-          "image": "/sweeping-engagement-3.jpg"
+          "image": "/sweeping-engagement-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "sweeping-engagement-4",
           "name": "Sweeping engagement - 4",
           "type" : "medium",
           "number": 4,
-          "image": "/sweeping-engagement-4.jpg"
+          "image": "/sweeping-engagement-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         },
         {
           "id": "sweeping-engagement-5",
           "name": "Sweeping engagement - 5",
           "type" : "heavy",
           "number": 5,
-          "image": "/sweeping-engagement-5.jpg"
+          "image": "/sweeping-engagement-5.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         },
         {
           "id": "sweeping-engagement-6",
           "name": "Sweeping engagement - 6",
           "type" : "light",
           "number": 6,
-          "image": "/sweeping-engagement-6.jpg"
+          "image": "/sweeping-engagement-6.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "prototype ruin"]
         }
       ]
     },
@@ -271,49 +304,56 @@
           "name": "Tipping point - 1",
           "type": "heavy",
           "number": 1,
-          "image": "/tipping-point-1.jpg"
+          "image": "/tipping-point-1.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "tipping-point-2",
           "name": "Tipping point - 2",
           "type": "heavy",
           "number": 2,
-          "image": "/tipping-point-2.jpg"
+          "image": "/tipping-point-2.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "tipping-point-3",
           "name": "Tipping point - 3",
           "type": "medium",
           "number": 3,
-          "image": "/tipping-point-3.jpg"
+          "image": "/tipping-point-3.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "tipping-point-4",
           "name": "Tipping point - 4 - 5",
           "type": "medium",
           "number": [4, 5],
-          "image": "/tipping-point-4.jpg"
+          "image": "/tipping-point-4.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "tipping-point-6",
           "name": "Tipping point - 6",
           "type": "medium",
           "number": 6,
-          "image": "/tipping-point-6.jpg"
+          "image": "/tipping-point-6.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         },
         {
           "id": "tipping-point-7",
           "name": "Tipping point - 7",
           "type": "light",
           "number": 7,
-          "image": "/tipping-point-7.jpg"
+          "image": "/tipping-point-7.jpg",
+          "features": ["large ruin", "small ruin", "cargo container", "knight gap"]
         },
         {
           "id": "tipping-point-8",
           "name": "Tipping point - 8",
           "type": "light",
           "number": 8,
-          "image": "/tipping-point-8.jpg"
+          "image": "/tipping-point-8.jpg",
+          "features": ["large ruin", "small ruin", "cargo container"]
         }
       ]
     }

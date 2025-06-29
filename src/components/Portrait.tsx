@@ -96,7 +96,7 @@ export const Portrait = ({
             <div>{`${selectedMap.type[0].toUpperCase()}${selectedMap.type.slice(1)}`}</div>
           </div>
         </div>
-        <MapKey />
+        <MapKey map={selectedMap} />
       </div>}
     </div>
   );
