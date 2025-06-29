@@ -1,5 +1,4 @@
 import { faCircleInfo, faFistRaised, faGun, faQuestionCircle, faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "./Button";
 import { MapKey } from "./MapKey";
 import { MapSelector } from "./MapSelector";
 import { MapViewer } from "./MapViewer";
@@ -9,7 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface OrientationProps {
   mapSets: MapSetOption[],
   setMapSet: (id: string) => void,
+  setTypeFilter: (type: string) => void,
   setMapDeployment: (id: string) => void,
+  filteredMaps: Map[] | undefined,
+  typeFilter: string,
   selectedDeployment: MapSet['deployments'][number] | undefined,
   selectedMapIndex: number,
   selectionAction: (type: 'next' | 'prev' | 'random') => void,
@@ -21,6 +23,9 @@ export const Portrait = ({
   mapSets,
   setMapSet,
   setMapDeployment,
+  setTypeFilter,
+  typeFilter,
+  filteredMaps,
   selectedMapSet,
   selectedMap,
   selectedDeployment,
@@ -63,19 +68,19 @@ export const Portrait = ({
         <div className="font-bold pt-6 pb-3">Filter by:</div>
         <div className="flex gap-3">
           <label className="flex-1 flex text-lg gap-3">
-            <input type="radio" name="filter" className="scale-150" />
+            <input type="radio" name="filter" className="scale-150" value="all" checked={typeFilter === "all"} onChange={((e) => setTypeFilter(e.target.value))} />
             <span>All</span>
           </label>
           <label className="flex-1 flex text-lg gap-3">
-            <input type="radio" name="filter" className="scale-150" />
+            <input type="radio" name="filter" className="scale-150" value="light" checked={typeFilter === "light"} onChange={((e) => setTypeFilter(e.target.value))} />
             <span>Light</span>
           </label>
           <label className="flex-1 flex text-lg gap-3">
-            <input type="radio" name="filter" className="scale-150" />
+            <input type="radio" name="filter" className="scale-150" value="medium" checked={typeFilter === "medium"} onChange={((e) => setTypeFilter(e.target.value))} />
             <span>Medium</span>
           </label>
           <label className="flex-1 flex text-lg gap-3">
-            <input type="radio" name="filter" className="scale-150" />
+            <input type="radio" name="filter" className="scale-150" value="heavy" checked={typeFilter === "heavy"} onChange={((e) => setTypeFilter(e.target.value))} />
             <span>Heavy</span>
           </label>
         </div>
@@ -83,14 +88,22 @@ export const Portrait = ({
       {selectedMap && selectedDeployment && <div className="py-6">
         <MapSelector
           mapName={selectedMap.name}
-          totalMaps={selectedDeployment.maps.length}
+          totalMaps={filteredMaps ? filteredMaps.length : 0}
           currentIndex={selectedMapIndex}
           action={selectionAction} />
         <div className="mb-3">
           <MapViewer selectedMapSet={selectedMapSet} selectedMap={selectedMap} />
         </div>
         <div className="my-3 flex gap-3 items-center">
-          <Button icon={faCircleInfo} label="Key" />
+          <div
+            className={`flex gap-2 items-center`}>
+            <div className="text-xl">
+              <FontAwesomeIcon icon={faCircleInfo} />
+            </div>
+            <div className="text-lg">
+              Key
+            </div>
+          </div>
           <div className="font-bold text-xl ml-auto flex gap-2">
             <div><FontAwesomeIcon icon={getIconFromType(selectedMap.type)} /></div>
             <div>{`${selectedMap.type[0].toUpperCase()}${selectedMap.type.slice(1)}`}</div>

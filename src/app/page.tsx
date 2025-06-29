@@ -19,14 +19,14 @@ export default function Home() {
   const [selectedMapSet, setSelectedMapSet] = useState<MapSet | undefined>();
   const [mapDeployment, setMapDeployment] = useState<string | undefined>();
   const [map, setMap] = useState<string | undefined>();
-  const [typeFilter, setTypeFilter] = useState<string | undefined>();
+  const [typeFilter, setTypeFilter] = useState<string>("all");
 
   const selectedDeployment = selectedMapSet
     ? selectedMapSet.deployments.find(({ id }) => id === mapDeployment)
     : undefined;
   
   const filteredMaps = selectedDeployment && selectedDeployment.maps.filter((map) => {
-    if (!typeFilter) return true;
+    if (typeFilter === "all") return true;
     return map.type.toLowerCase() === typeFilter.toLowerCase();
   });
   
@@ -50,28 +50,34 @@ export default function Home() {
   }, [mapDeployment]);
 
   useEffect(() => {
+    if (filteredMaps && filteredMaps.findIndex(({ id }) => id === map) === -1) {
+      setMap(filteredMaps[0].id);
+    }
+  }, [filteredMaps])
+
+  useEffect(() => {
     getMapSetInfo(mapSet)
   }, [mapSet]);
 
   const selectionAction = (type: 'next' | 'prev' | 'random') => {
-    if (!selectedMapSet || !selectedDeployment) return;
+    if (!selectedMapSet || !selectedDeployment || !filteredMaps?.length) return;
 
     const currentIndex = selectedMapIndex;
 
     switch (type) {
       case 'next':
-        if (currentIndex < selectedDeployment.maps.length - 1) {
-          setMap(selectedDeployment.maps[currentIndex + 1].id);
+        if (currentIndex < filteredMaps.length - 1) {
+          setMap(filteredMaps[currentIndex + 1].id);
         }
         break;
       case 'prev':
         if (currentIndex > 0) {
-          setMap(selectedDeployment.maps[currentIndex - 1].id);
+          setMap(filteredMaps[currentIndex - 1].id);
         }
         break;
       case 'random':
-        const randomIndex = Math.floor(Math.random() * selectedDeployment.maps.length);
-        setMap(selectedDeployment.maps[randomIndex].id);
+        const randomIndex = Math.floor(Math.random() * filteredMaps.length);
+        setMap(filteredMaps[randomIndex].id);
         break;
     }
   };
@@ -88,6 +94,9 @@ export default function Home() {
     mapSets: MAP_SETS,
     setMapSet,
     setMapDeployment,
+    setTypeFilter,
+    filteredMaps,
+    typeFilter,
     selectedMapSet,
     selectedMap,
     selectedDeployment,
