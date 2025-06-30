@@ -17,7 +17,8 @@
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-iv-viewer": "^1.0.3"
+    "react-iv-viewer": "^1.0.3",
+    "react-spinners": "^0.17.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
